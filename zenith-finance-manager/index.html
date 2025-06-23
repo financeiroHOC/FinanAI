@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenith Finance Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // or 'media'
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              light: '#60a5fa', // blue-400
+              DEFAULT: '#3b82f6', // blue-500
+              dark: '#2563eb', // blue-600
+              darker: '#1d4ed8' // blue-700
+            },
+            secondary: {
+              light: '#34d399', // emerald-400
+              DEFAULT: '#10b981', // emerald-500
+              dark: '#059669', // emerald-600
+              darker: '#047857' // emerald-700
+            },
+            accent: {
+              light: '#fcd34d', // amber-300
+              DEFAULT: '#f59e0b', // amber-500
+              dark: '#d97706', // amber-600
+            },
+            danger: {
+              light: '#f87171', // red-400
+              DEFAULT: '#ef4444', // red-500
+              dark: '#dc2626', // red-600
+            },
+            pinkish: {
+              light: '#f9a8d4', // pink-300
+              DEFAULT: '#ec4899', // pink-500
+              dark: '#db2777', // pink-600
+            },
+            purplish: {
+              light: '#c084fc', // purple-400
+              DEFAULT: '#a855f7', // purple-500
+              dark: '#9333ea', // purple-600
+            },
+            skyish: {
+              light: '#7dd3fc', // sky-300
+              DEFAULT: '#38bdf8', // sky-500
+              dark: '#0ea5e9', // sky-600
+            },
+            neutral: {
+              50: '#f9fafb',  // gray-50
+              100: '#f3f4f6', // gray-100
+              200: '#e5e7eb', // gray-200
+              300: '#d1d5db', // gray-300
+              400: '#9ca3af', // gray-400
+              500: '#6b7280', // gray-500
+              600: '#4b5563', // gray-600
+              700: '#374151', // gray-700
+              750: '#2a3545', // Custom shade between 700 and 800
+              800: '#1f2937', // gray-800
+              850: '#18212f', // Custom shade between 800 and 900
+              900: '#111827', // gray-900
+            },
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "recharts": "https://esm.sh/recharts@^3.0.0",
+    "recharts/": "https://esm.sh/recharts@^3.0.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.6.0",
+    "xlsx": "https://esm.sh/xlsx@0.18.5"
+  }
+}
+</script>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Subtle gradient for the overall page background for a premium feel */
+    background-image: linear-gradient(to bottom right, #f9fafb, #e5e7eb); /* neutral-50 to neutral-200 */
+  }
+
+  .dark body {
+    background-image: linear-gradient(to bottom right, #111827, #18212f); /* neutral-900 to neutral-850 */
+  }
+
+  /* Smooth transitions for common properties */
+  button, a, input, select, textarea, .transition-all {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Custom Scrollbars */
+  /* For Webkit browsers (Chrome, Safari, newer Edge) */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d1d5db; /* neutral-300 */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af; /* neutral-400 */
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: #4b5563; /* neutral-600 */
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: #6b7280; /* neutral-500 */
+  }
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent; /* thumb track */
+  }
+  .dark * {
+    scrollbar-color: #4b5563 transparent; /* thumb track for dark mode */
+  }
+
+
+  header.app-header {
+    height: 70px; /* Increased header height for a more premium feel */
+  }
+  /* Main content area background, distinct from body to create layers */
+  main {
+     background-color: transparent; /* Let body gradient show */
+  }
+  .dark main {
+    background-color: transparent; /* Let body gradient show */
+  }
+
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
